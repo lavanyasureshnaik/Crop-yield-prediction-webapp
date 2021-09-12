@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='account.css') }}">
+    <title>Title</title>
+</head>
+<body background="static/4.jpg">
+<div class="topnav">
+  <a class="active" href>
+  <a class="active" href="/logout">logout</a></a>
+</div>
+    <center>{% with messages = get_flashed_messages() %}
+   {% if messages %}
+     <ul class="flashes">
+        {% for message in messages %}
+         <div class="message_flash">{{ message }}</div>
+        {% endfor %}
+    </ul>
+  {% endif %}
+ {% endwith %}</center>
+
+    <div class="container">
+        <br>
+        <br>
+        <center>
+        <form action = "/Government_buying" method = "post" enctype="multipart/form-data">
+            <br>
+            <br>
+            <button type="submit">Farmer List</button>
+        </form>
+        <form action = "/Government_buying" method = "post" enctype="multipart/form-data">
+            <br>
+            <br>
+            <button type="submit">Buying</button>
+        </form></center>
+
+    </div>
+
+
+</body>
+
+<style>
+body {
+  background-image: url("/static/4.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+</html>

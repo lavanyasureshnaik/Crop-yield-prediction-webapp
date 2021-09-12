@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='account.css') }}">
+    <title>Title</title>
+</head>
+<body background="static/4.jpg">
+<div class="topnav">
+  <a class="active" href>
+  <a class="active" href="/logout">logout</a></a>
+</div>
+    <center>{% with messages = get_flashed_messages() %}
+   {% if messages %}
+     <ul class="flashes">
+        {% for message in messages %}
+         <div class="message_flash">{{ message }}</div>
+        {% endfor %}
+    </ul>
+  {% endif %}
+ {% endwith %}</center>
+
+    <div class="container">
+        <br>
+        <br>
+        <center>
+        <!--form action = "/Crop_predict" method = "post" enctype="multipart/form-data">
+
+            <label for="psw"><b></b></label> State_Code  <input type="text" placeholder="" name="State_Name" ><br>
+            <label for="psw"><b></b></label> District_Code    <input type="text" placeholder="" name="District_Name" ><br>
+            <label for="psw"><b></b></label> Season_Code  <input type="text" placeholder="" name="Season" ><br>
+            <label for="psw"><b></b></label> Temperature  <input type="text" placeholder="" name="Temperature" ><br>
+            <label for="psw"><b></b></label> humidity    <input type="text" placeholder="" name="humidity" ><br>
+            <label for="psw"><b></b></label> moisture  <input type="text" placeholder="" name="moisture" ><br>
+
+
+            <br>
+            <br>
+            <button type="submit">Predict</button>
+        </form--></center>
+
+    </div>
+<form action = "/Crop_predict" method = "post" enctype="multipart/form-data">
+<table>
+            <tr>
+  <tr>
+    <th>FEATURES</th>
+    <th>VALUES</th>
+</tr>
+     <!--<td><label for="psw"><b></b></label> State_Code
+        <select id="State_Code">
+
+         var State_Code = ['karnataka', 'Andaman and Nicobar Islands', 'Andhra Pradesh',
+       'Arunachal Pradesh', 'Assam', 'Bihar', 'Chandigarh',
+       'Chhattisgarh'];
+         for (i = 0; i < State_Code.length; i++) {
+         var opt = document.createElement("option");
+         document.getElementById("m").innerHTML += '<option id="' + i + '">' + State_Code[i] + '</option>';
+        </select>
+     </td><td><input type="text" placeholder="" name="State_Name" ><br></td>
+
+  </tr>
+    <tr>
+        <td>
+        <form action="/action_page.php">
+            <td><label for="psw"><b></b></label>Choose a State_Code:</td>
+            <select name="State_Code" id="State_Code">
+                <option value='karnataka'>karnataka</option>
+                <option value='Andaman and Nicobar Islands'>Andaman and Nicobar Islands</option>
+                <option value='Andhra Pradesh'>Andhra Pradesh</option>
+                <option value='Arunachal Pradesh'>Arunachal Pradesh</option>
+                <option value='Assam'>Assam</option>
+                <option value='Bihar'>Bihar</option>
+                <option value='Chandigarh'>Chandigarh</option>
+                <option value='Chhattisgarh'>Chhattisgarh</option>
+            </select>
+            <br><br>
+    <</td><td><input type="text" placeholder="" name="State_Code" ><br></td>-->
+        <td><label for="psw"><b></b></label> State_Name  </td>
+        <td><select name="State_Name" id="State_Name">
+                <option value='karnataka'>karnataka</option>
+                <option value='Andaman and Nicobar Islands'>Andaman and Nicobar Islands</option>
+                <option value='Andhra Pradesh'>Andhra Pradesh</option>
+                <option value='Arunachal Pradesh'>Arunachal Pradesh</option>
+                <option value='Assam'>Assam</option>
+                <option value='Bihar'>Bihar</option>
+                <option value='Chandigarh'>Chandigarh</option>
+                <option value='Chhattisgarh'>Chhattisgarh</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td><label for="psw"><b></b></label> District_Name    </td>
+        <td> <select name="District_Name" id="District_Name">
+      <option value="bagalkot">bagalkot</option>
+      <option value="Ballari">Ballari</option>
+      <option value="Belagavi">Belagavi</option>
+      <option value="Bengalure Rular">Bengalure Rular</option>
+      <option value="Bengalure Urban">Bengalure Urban</option>
+      <option value="Bidar">Bidar</option>
+      <option value="chamrajanagar">chamrajanagar</option>
+      <option value="chikballapura">chikballapura</option>
+      <option value="chikmangalore">chikmangalore</option>
+      <option value="chitra durga">chitra durga</option>
+      <option value="Davanagere">Davanagere</option>
+      <option value="Chidiga">Chidiga</option>
+      <option value="Morampudi">Morampudi</option>
+      <option value="Chennamukkapalle">Chennamukkapalle</option>
+      <option value="Dommara Nandyala">Dommara Nandyala</option>
+      <option value="Mangampeta">Mangampeta</option>
+      <option value="Modameedipalle">Modameedipalle</option>
+      <option value="Nagireddipalle">Nagireddipalle</option>
+      <option value="Veparala">Veparala</option>
+      <option value="Bambooflat">Bambooflat</option>
+      <option value="Garacharma">Garacharma</option>
+      <option value="Port Blair">Port Blair</option>
+      <option value="Prothrapur">Prothrapur</option>
+      <option value="Diglipur">Diglipur</option>
+      <option value="Mayabunder">Mayabunder</option>
+      <option value="Tusnabad">Tusnabad</option>
+      <option value="Indira Point">Indira Point</option>
+      <option value="Swaraj Dweep">Swaraj Dweep</option>
+      <option value="Zonal Anthropological Museum">Zonal Anthropological Museum</option>
+      <option value="Cellular Jail">Cellular Jail</option>
+      <option value="Itanagar">Itanagar</option>
+      <option value="East Siang district">East Siang district</option>
+      <option value="Ziro">Ziro</option>
+      <option value="Bomdila">Bomdila</option>
+      <option value="Jairampur">Jairampur</option>
+      <option value="Naharlagun">Naharlagun</option>
+      <option value="Deomali">Deomali</option>
+      <option value="Seppa">Seppa</option>
+          </select></td>
+    </tr>
+        <td><label for="psw"><b></b></label> Season  </td>
+    <td>
+        <select name ="Season" id="Season">
+        <option value="Kharif">Kharif</option>
+      <option value="Whole Year">Whole Year</option>
+      <option value="Autumn">Autumn</option>
+      <option value="Rabi">Rabi</option>
+      <option value="Summer">Summer</option>
+      <option value="Winter">Winter</option>
+          </select></td>
+    <tr>
+        <td><label for="psw"><b></b></label> Temperature  </td><td><input type="text" placeholder="" name="Temperature" ><br></td>
+    </tr>
+    <tr>
+        <td><label for="psw"><b></b></label> humidity    </td><td><input type="text" placeholder="" name="humidity" ><br></td>
+    </tr>
+    <tr>
+        <td><label for="psw"><b></b></label> moisture  </td><td><input type="text" placeholder="" name="moisture" ><br></td>
+    </tr>
+    <tr>
+        <td><label for="psw"><b></b></label></td><td><button type="submit">Predict</button><br></td>
+    </tr>
+
+</table>
+    </form>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+</body>
+
+<style>
+body {
+  background-image: url("/static/4.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+</html>

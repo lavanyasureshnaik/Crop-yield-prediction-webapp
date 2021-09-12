@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+  <form action="/government_register" method="post">
+
+    <div class="container">
+        <label for="uname"><b>User name</b></label>
+      <input type="text" placeholder="Enter Name" name="uname" >
+
+      <label for="email"><b>Govn Email id</b></label>
+      <input type="email" placeholder="Enter Email ID" name="email" ><br />
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" >
+
+        <label for="gender"><b>Department</b></label>
+        <input type="text" placeholder="" name="gender" />
+
+        <label for="age"><b>Age</b></label>
+        <input type="text" placeholder="Enter your age" name="age" />
+
+        <button type="submit">Submit</button>
+
+
+    </div>
+
+  </form>
+
+
+{% endblock content %}

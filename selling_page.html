@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+  <form action="/selling_page" method="post">
+
+    <div class="container">
+        <label for="farmer"><b>Farmer</b></label>
+      <input type="text" placeholder="Enter Name" name="farmer" >
+
+      <label for="LANDAREA"><b>LAND AREA</b></label>
+      <input type="text" placeholder="Enter " name="LANDAREA" >
+
+      <label for="CROPGROWN"><b>CROP GROWN</b></label>
+      <input type="text" placeholder="Enter" name="CROPGROWN" >
+
+        <label for="CROPYEILD"><b>CROP YEILD</b></label>
+        <input type="text" placeholder="" name="CROPYEILD" />
+
+        <label for="COSTINIG"><b>COSTINIG</b></label>
+        <input type="text" placeholder="Enter" name="COSTINIG" />
+
+        <label for="brougth"><b>brougth</b></label>
+        <input type="text" placeholder="Enter" name="brougth" />
+
+        <label for="location"><b>location</b></label>
+        <input type="text" placeholder="Enter" name="location" />
+
+        <button type="submit">Submit</button>
+
+
+    </div>
+
+  </form>
+
+
+{% endblock content %}

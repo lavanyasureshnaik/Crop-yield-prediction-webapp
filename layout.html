@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+
+    <title>Title</title>
+</head>
+<body background="static/4.jpg">
+
+<div class="topnav">
+    <a href="about"><button>About</button></a>
+
+    <a href="user_login"><button onclick="document.getElementById('id01').style.display='block'">Farmer</button></a>
+
+    <a href="government_login"><button onclick="document.getElementById('id02').style.display='block'">Government</button></a>
+
+    <a  href="/home"><button class="active">Home</button></a>
+
+</div>
+
+<center><h1>Crop Yeild Analysis and Krushi Seva Kendra</h1></center>
+
+          {% block content %}{% endblock %}
+
+
+</body>
+
+<style>
+body {
+  background-image: url("/static/4.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+</html>
